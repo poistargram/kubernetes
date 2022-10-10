@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: poi-label
+  labels:
+    type: backend
+    env: dev
+spec:
+  containers:
+  - image: poistargram/poi
+    name: poi
+    ports:
+    - containerPort: 8080
+      protocol: TCP

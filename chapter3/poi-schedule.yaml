@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: poi-schedule
+  labels:
+    type: backend
+    env: test
+spec:
+  nodeSelector:
+    gpu: "true"
+  containers:
+  - image: poistargram/poi
+    name: poi
+    ports:
+    - containerPort: 8080
+      protocol: TCP

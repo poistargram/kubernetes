@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: poi-daemon
+spec:
+  selector:
+    matchLabels:
+      app: poi-daemon
+  template:
+    metadata:
+      labels:
+        app: poi-daemon
+    spec:
+      nodeSelector:
+        disk: ssd
+      containers:
+      - name: main
+        image: poistargram/poi
+
